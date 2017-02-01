@@ -19,11 +19,11 @@ function app_i2c(server) {
             let x = signed(res[0])
             let y = signed(res[1])
             let z = signed(res[2])
-            io.sockets.emit('event', {
-                x: x,
-                y: y,
-                z: z,
-            })
+            // io.sockets.emit('event', {
+            //     x: x,
+            //     y: y,
+            //     z: z,
+            // })
             console.log(x, y, z)
         })
     }, 100)
