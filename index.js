@@ -1,1 +1,1 @@
-let i2c = require('./app.js')
+let i2c = require('./app.js')()
