@@ -1,7 +1,7 @@
 let express = require('express')
 let router = express.Router()
 let i2c = require('i2c')
-let addr = 0x1d
+let addr = 0x18
 let wire = new i2c(addr, {
     device: '/dev/i2c-1'
 })
@@ -13,10 +13,22 @@ function signed(n) {
 function app_i2c() {
     console.log('app_i2c')
     //let io = require('socket.io')(server)
-    wire.writeBytes(0x16, [0x05], function(err, res) {})
-    wire.writeBytes(0x10, [0, 0, 0, 0, 0, 0], function(err, res) {})
+    wire.writeBytes(0x16, [0x05], function(err, res) {
+        console.log('write')
+        console.log(err)
+        console.log(res)
+
+    })
+    wire.writeBytes(0x10, [0, 0, 0, 0, 0, 0], function(err, res) {
+      console.log('write2')
+      console.log(err)
+      console.log(res)
+
+    })
     setInterval(function() {
         wire.readBytes(0x06, 3, function(err, res) {
+            console.log(err)
+            console.log(err)
             let x = signed(res[0])
             let y = signed(res[1])
             let z = signed(res[2])
@@ -27,7 +39,7 @@ function app_i2c() {
             // })
             console.log(x, y, z)
         })
-    }, 100)
+    }, 3000)
 }
 
 module.exports = app_i2c
