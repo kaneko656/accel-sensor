@@ -21,12 +21,12 @@ function app_i2c() {
       console.log(err)
       console.log(res)
     })
+    let a = 0b00001
 
     wire.writeBytes(0x20, [0x77], function(err, res) {
         console.log('パワーダウンをオフ')
         console.log(err)
         console.log(res)
-
     })
     setInterval(function() {
         // 読み出しをするときは
@@ -35,9 +35,9 @@ function app_i2c() {
             console.log(res)
             // lower
             // higher
-            let x = res[0] + signed(res[1]) * 256
-            let y = res[2] + signed(res[3]) * 256
-            let z = res[4] + signed(res[5]) * 256
+            let x = signed(res[1]) * 4 + (res[0] >>> 6)
+            let y = signed(res[3]) * 4 + (res[2] >>> 6)
+            let z = signed(res[5]) * 4 + (res[4] >>> 6)
             // io.sockets.emit('event', {
             //     x: x,
             //     y: y,
