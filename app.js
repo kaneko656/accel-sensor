@@ -31,8 +31,8 @@ function app_i2c() {
     setInterval(function() {
         // 読み出しをするときは
         wire.readBytes(0xA8, 6, function(err, res) {
-            console.log(err)
             console.log(res)
+            console.log(res[0], res[1], res[2], res[3], res[4], res[5])
             // lower
             // higher
             let x = signed(res[1]) * 4 + (res[0] >>> 6)
