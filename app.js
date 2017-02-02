@@ -5,6 +5,7 @@ let addr = 0x18
 let wire = new i2c(addr, {
     device: '/dev/i2c-1'
 })
+console.log(wire)
 
 function signed(n) {
     return (n < 128) ? n : n - 256
