@@ -17,6 +17,10 @@ function app_i2c() {
 
     // i2cを選択するアドレス
     // センサごとの中のアドレス
+    wire.readBytes(0x0F, 1, function(err, res) {
+      console.log(err)
+      console.log(res)
+    })
 
     wire.writeBytes(0x20, [0x7f], function(err, res) {
         console.log('パワーダウンをオフ')
@@ -40,7 +44,7 @@ function app_i2c() {
             // })
             console.log(x, y, z)
         })
-    }, 3000)
+    }, 1000)
 }
 
 module.exports = app_i2c
