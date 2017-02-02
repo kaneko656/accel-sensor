@@ -57,7 +57,7 @@ exports.start = (millis, callback) => {
             //     y: y,
             //     z: z,
             // })
-            readCall(x,y,z)
+            callback(x,y,z)
             console.log(x, y, z)
         })
     }, millis)
