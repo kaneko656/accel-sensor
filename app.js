@@ -35,9 +35,9 @@ function app_i2c() {
             console.log(res)
             // lower
             // higher
-            let x = res[0] + signed(res[1]) * 256
-            let y = res[2] + signed(res[3]) * 256
-            let z = res[4] + signed(res[5]) * 256
+            let x = res[1] + signed(res[0]) * 256
+            let y = res[3] + signed(res[2]) * 256
+            let z = res[5] + signed(res[4]) * 256
             // io.sockets.emit('event', {
             //     x: x,
             //     y: y,
@@ -45,7 +45,7 @@ function app_i2c() {
             // })
             console.log(x, y, z)
         })
-    }, 1000)
+    }, 100)
 }
 
 module.exports = app_i2c
