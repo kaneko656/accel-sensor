@@ -18,13 +18,23 @@ function app_i2c() {
     // i2cを選択するアドレス
     // センサごとの中のアドレス
     wire.readBytes(0x0F, 1, function(err, res) {
-      console.log(err)
-      console.log(res)
+        console.log(err)
+        console.log(res)
     })
-    let a = 0b00001
 
+    wire.writeBytes(0x20, [0x07], function(err, res) {
+        // 0x27
+        console.log('パワーダウンをオフ ２段階')
+        console.log(err)
+        console.log(res)
+    })
     wire.writeBytes(0x20, [0x77], function(err, res) {
-        console.log('パワーダウンをオフ')
+        console.log('パワーダウンをオフ ２段階')
+        console.log(err)
+        console.log(res)
+    })
+    wire.writeBytes(0x23, [0x88], function(err, res) {
+        console.log('12bitになる bduを有効に')
         console.log(err)
         console.log(res)
     })
@@ -32,12 +42,11 @@ function app_i2c() {
         // 読み出しをするときは
         wire.readBytes(0xA8, 6, function(err, res) {
             console.log(res)
-            console.log(res[0], res[1], res[2], res[3], res[4], res[5])
             // lower
             // higher
-            let x = signed(res[1]) * 4 + (res[0] >>> 6)
-            let y = signed(res[3]) * 4 + (res[2] >>> 6)
-            let z = signed(res[5]) * 4 + (res[4] >>> 6)
+            let x = signed(res[1]) * 16 + (res[0] >>> 4)
+            let y = signed(res[3]) * 16 + (res[2] >>> 4)
+            let z = signed(res[5]) * 16 + (res[4] >>> 4)
             // io.sockets.emit('event', {
             //     x: x,
             //     y: y,
