@@ -22,14 +22,15 @@ function app_i2c() {
       console.log(res)
     })
 
-    wire.writeBytes(0x20, [0x7f], function(err, res) {
+    wire.writeBytes(0x20, [0x7F], function(err, res) {
         console.log('パワーダウンをオフ')
         console.log(err)
         console.log(res)
 
     })
     setInterval(function() {
-        wire.readBytes(0x28, 6, function(err, res) {
+        // 読み出しをするときは
+        wire.readBytes(0xA8, 6, function(err, res) {
             console.log(err)
             console.log(res)
             // lower
