@@ -1,14 +1,14 @@
 const request = require('./request/request.js')
 const i2c = require('./sensor/i2c.js')
+const config = require('./config.json')
 
+console.log(config)
 i2c.start(100, (x, y, z) => {
     console.log(x, y, z)
 
     if (x > 1000) {
-        request.get('http://localhost:8010', '/play', {
-            pass: '1108'
-        }, (err, res, body) => {
-            console.log(body)
-        })
+        request.get(config.url, '/play', config.body, (err, res, body) => {
+                console.log(body)
+            })
     }
 })

@@ -1,0 +1,13 @@
+{
+	"url": "http://kaneko-macbook-pro.local:8010/control",
+	"body": {
+		"text": "あぁ？ちょっと水を飲むんだったら、ついでに、植物にも水をあげて？",
+		"speaker": "hikari",
+		"volume": 100,
+		"emotion": "undefined",
+		"emotion_level": 2,
+		"speed": 90,
+		"pitch": 113,
+    "pass" : 1108
+	}
+}
