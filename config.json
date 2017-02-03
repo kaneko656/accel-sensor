@@ -1,5 +1,5 @@
 {
-	"url": "http://kaneko-macbook-pro.local:8010",
+	"url": "http://soundserver03.local:3000",
 	"method": "/control",
 	"body": {
 		"text": "あぁ？ちょっと水を飲むんだったら、ついでに、植物にも水をあげて？",
