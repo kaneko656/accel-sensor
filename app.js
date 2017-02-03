@@ -13,7 +13,7 @@ i2c.start(100, (x, y, z) => {
         console.log(config.url + config.method)
 
         let now = new Date().getTime()
-        if(now - speakTime < waitMillits){
+        if(now - speakTime < waitMillis){
             return
         }
         request.post(config.url, config.method, config.body, (err, res, body) => {
