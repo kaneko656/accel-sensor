@@ -1,5 +1,5 @@
 {
-	"url": "http://soundserver03.local:3000",
+	"url": "http://soundserver03.local:3000/api",
 	"method": "/control",
 	"body": {
 		"text": "あぁ？ちょっと水を飲むんだったら、ついでに、植物にも水をあげて？",
