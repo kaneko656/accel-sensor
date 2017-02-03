@@ -1,5 +1,6 @@
 {
-	"url": "http://kaneko-macbook-pro.local:8010/control",
+	"url": "http://kaneko-macbook-pro.local:8010",
+	"method": "/control",
 	"body": {
 		"text": "あぁ？ちょっと水を飲むんだったら、ついでに、植物にも水をあげて？",
 		"speaker": "hikari",

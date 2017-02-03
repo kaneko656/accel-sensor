@@ -7,7 +7,7 @@ i2c.start(100, (x, y, z) => {
     console.log(x, y, z)
 
     if (x > 1000) {
-        request.get(config.url, '/play', config.body, (err, res, body) => {
+        request.get(config.url, config.method, config.body, (err, res, body) => {
                 console.log(body)
             })
     }
