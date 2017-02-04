@@ -9,7 +9,7 @@ console.log(config)
 i2c.start(100, (x, y, z) => {
     console.log(x, y, z)
 
-    if (x < -500) {
+    if (x < -800) {
         console.log(config.url + config.method)
 
         let now = new Date().getTime()
