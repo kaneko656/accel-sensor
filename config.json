@@ -1,14 +1,15 @@
 {
-	"url": "http://soundserver02.local:3000/api",
+	"url": "http://soundserver-icc.local:3000/api",
 	"method": "/control",
 	"body": {
-		"text": "あぁ？ちょっと水を飲むんだったら、ついでに、植物にも水をあげて？",
+		"text": "あぁ?ちょっと水を飲むんだったら、ついでに、植物にも水をあげて？",
 		"speaker": "hikari",
-		"volume": 100,
-		"emotion": "undefined",
+		"volume": 150,
+		"emotion": "happiness",
 		"emotion_level": 2,
-		"speed": 93,
-		"pitch": 108,
+		"speed": 90,
+		"pitch": 105,
     "pass" : 1108
-	}
+	},
+	"interval": "100"
 }
